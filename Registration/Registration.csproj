@@ -272,23 +272,23 @@
     </Compile>
     <Compile Include="Models\Registration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User.cs">
-      <DependentUpon>UserRegistration.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UserRegistration.Context.cs">
+    <Compile Include="Registration.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UserRegistration.Context.tt</DependentUpon>
+      <DependentUpon>Registration.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="UserRegistration.cs">
+    <Compile Include="Registration.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UserRegistration.tt</DependentUpon>
+      <DependentUpon>Registration.tt</DependentUpon>
     </Compile>
-    <Compile Include="UserRegistration.Designer.cs">
+    <Compile Include="Registration.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UserRegistration.edmx</DependentUpon>
+      <DependentUpon>Registration.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="UserDetail.cs">
+      <DependentUpon>Registration.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -300,6 +300,16 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Registration.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Registration.edmx</DependentUpon>
+      <LastGenOutput>Registration.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Registration.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Registration.edmx</DependentUpon>
+      <LastGenOutput>Registration.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -321,22 +331,19 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <EntityDeploy Include="Registration.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Registration.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Registration.edmx.diagram">
+      <DependentUpon>Registration.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="UserRegistration.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>UserRegistration.Context.cs</LastGenOutput>
-      <DependentUpon>UserRegistration.edmx</DependentUpon>
-    </Content>
-    <Content Include="UserRegistration.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>UserRegistration.edmx</DependentUpon>
-      <LastGenOutput>UserRegistration.cs</LastGenOutput>
-    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -351,13 +358,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <EntityDeploy Include="UserRegistration.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>UserRegistration.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="UserRegistration.edmx.diagram">
-      <DependentUpon>UserRegistration.edmx</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

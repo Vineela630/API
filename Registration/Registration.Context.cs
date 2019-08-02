@@ -13,10 +13,10 @@ namespace Registration
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class APIEntities : DbContext
+    public partial class LoginEntities : DbContext
     {
-        public APIEntities()
-            : base("name=APIEntities")
+        public LoginEntities()
+            : base("name=LoginEntities")
         {
         }
     
@@ -25,6 +25,6 @@ namespace Registration
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<UserDetail> UserDetails { get; set; }
     }
 }

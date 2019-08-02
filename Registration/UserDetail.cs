@@ -12,8 +12,9 @@ namespace Registration
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class UserDetail
     {
+        public int User { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string UserID { get; set; }

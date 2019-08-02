@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Registration.Models
 {
-    public class UserDetails
+    public class RegistrationDetails
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -13,5 +13,11 @@ namespace Registration.Models
         public string Password { get; set; }
         public string PhoneNumber { get; set; }
         public string EmailID { get; set; }
+    }
+
+    public class UserLoginDetails
+    {
+        public string UserID { get; set; }
+        public string Password { get; set; }
     }
 }

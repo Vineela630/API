@@ -14,14 +14,30 @@ namespace Registration.Controllers
     {
         [HttpPost]
         [Route("Api/UserRegistration")]
-        public HttpResponseMessage Registration(UserDetails userDetails)
+        public HttpResponseMessage Registration(RegistrationDetails RegDetail)
         {
             try
             {
                 UserRegistrationController userreg = new UserRegistrationController();
-                string Response = userreg.Register(userDetails);
+                string Response = userreg.Register(RegDetail);
                 return Request.CreateResponse(HttpStatusCode.OK, Response);
 
+            }
+            catch(Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpPost]
+        [Route("Api/UserLogin")]
+        public HttpResponseMessage UserLogin(UserLoginDetails loginDetails)
+        {
+            try
+            {
+                UserRegistrationController userlogin = new UserRegistrationController();
+                string Response = userlogin.Login(loginDetails);
+                return Request.CreateResponse(HttpStatusCode.OK, Response);
             }
             catch(Exception ex)
             {
